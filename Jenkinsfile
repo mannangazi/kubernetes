@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "10.100.5.10:5000/justme/myweb"
+    registry = "mannangazi/kubernetestest"
     dockerImage = ""
   }
 
