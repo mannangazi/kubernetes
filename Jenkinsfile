@@ -2,7 +2,7 @@ pipeline {
 
   environment {
     registry = "mannangazi/kubernetestest"
-    registryCredential = ‘dockerhub’
+    registryCredential = "dockerhub"
     dockerImage = ""
   }
 
