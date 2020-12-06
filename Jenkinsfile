@@ -1,18 +1,20 @@
 pipeline {
 
   environment {
-    registry = "mannangazi/kubernetestest"
-    registryCredential = "dockerhub"
+    registry = "10.100.5.10:5000/justme/myweb"
     dockerImage = ""
+    git_cr = 'GIT_CR'
+    git_url = 'https://github.com/mannangazi/kubernetes.git'
   }
 
   agent any
 
   stages {
 
-    stage('Checkout Source') {
+       stage('Checkout Source') {
       steps {
-        git 'https://github.com/mannangazi/kubernetes.git'
+        sh 'echo ${BUILD_NUMBER}'
+        git credentialsId: ${git_cr} , url: ${git_url}
       }
     }
 
