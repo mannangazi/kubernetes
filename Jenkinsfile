@@ -14,7 +14,8 @@ pipeline {
        stage('Checkout Source') {
       steps {
         sh 'echo ${BUILD_NUMBER}'
-        git credentialsId: ${git_cr} , url: ${git_url}
+        //git credentialsId: ${git_cr} , url: ${git_url}
+        git credentialsId: 'GIT_CR', url: 'https://github.com/mannangazi/kubernetes.git'
       }
     }
 
