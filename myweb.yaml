@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: 10.100.5.10:5000/justme/myweb:5
+      - image: 10.100.5.10:5000/justme/myweb:${BUILD_NUMBER}
         imagePullPolicy: Always
         name: myweb
 
@@ -29,7 +29,7 @@ metadata:
   name: myweb
 spec:
   ports:
-  - nodePort: 32223
+  - nodePort: 32224
     port: 80
     protocol: TCP
     targetPort: 80
