@@ -27,16 +27,27 @@ pipeline {
       }
     }
 
-    stage('Push Image') {
+  // stage('Push Image') {
+   //   steps{
+   //     script {
+   //       docker.withRegistry( "",registryCredential ) {
+   //         dockerImage.push()
+    //      }
+    //    }
+    //  }
+   // }
+
+    
+   stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "",registryCredential ) {
+          docker.withRegistry( "" ) {
             dockerImage.push()
           }
         }
       }
     }
-
+    
     stage('Deploy App') {
       steps {
         script {
